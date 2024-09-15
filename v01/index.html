@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Gerador de Assinatura de E-mail</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row inserted">
+      <div class="col-md-6 inserted">
+        <div class="page-header">
+          <h1>
+            Gerador de Assinatura de E-Mail <small>IFSP.SJP</small>
+          </h1>
+        </div>
+        <p>
+        </p>
+        <hr />
+        <form role="form" lpformnum="2">
+          <fieldset>
+
+            <!-- Form Name -->
+            <legend>Preencha o Formulário</legend>
+            <!-- Multiple Radios -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="funcao_radio">Possui função?</label>
+              <div class="col-md-4">
+                <div class="radio">
+                  <label for="funcao_radio-0">
+                    <input type="radio" name="funcao_radio" id="funcao_radio-0" value="option_nao_funcao"
+                      checked="checked">
+                    Não
+                  </label>
+                </div>
+                <div class="radio">
+                  <label for="funcao_radio-1">
+                    <input type="radio" name="funcao_radio" id="funcao_radio-1" value="option_sim_funcao">
+                    Sim
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="input_nome">Nome</label>
+              <div class="col-md-6">
+                <input id="input_nome" name="input_nome" type="text" placeholder="Nome" class="form-control input-md"
+                  required="">
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="input_funcao">Função</label>
+              <div class="col-md-6">
+                <input disabled id="input_funcao" name="input_funcao" type="text" placeholder="Função"
+                  class="form-control input-md" required="">
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="input_cargo">Cargo</label>
+              <div class="col-md-6">
+                <input id="input_cargo" name="input_cargo" type="text" placeholder="Cargo" class="form-control input-md"
+                  required="">
+
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="input_setor">Setor</label>
+              <div class="col-md-6">
+                <input id="input_setor" name="input_setor" type="text" placeholder="Setor" class="form-control input-md"
+                  required="">
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="input_ramal">Ramal</label>
+              <div class="col-md-6">
+                <input id="input_ramal" name="input_ramal" type="text" placeholder="Ramal" class="form-control input-md"
+                  required="">
+              </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="text_infoadicional">Informação Adicional</label>
+              <div class="col-md-4">
+                <textarea class="form-control" id="text_infoadicional" name="text_infoadicional"></textarea>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="gerar_assinatura"></label>
+              <div class="col-md-4">
+                <button id="gerar_assinatura" name="gerar_assinatura" class="btn btn-success">Gerar Assinatura</button>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+        <hr />
+      </div>
+      <div class="col-md-6 inserted ">
+        <p class="inserted lead text-left lateral">
+          Visualização
+        </p>
+        <hr />
+        <div id='visualizacao'>
+          <table style="width: 600px;" border="0">
+            <tr>
+              <!-- Logo IFSJP <img width='115' src='https://sjp.ifsp.edu.br/images/Logo_Campus/Marca_IFSP_SJP_V_01.png' 
+                https://sjp.ifsp.edu.br/images/Logo_Campus/assinatura/logoSJRP2.png
+                https://sjp.ifsp.edu.br/images/Logo_Campus/assinatura/icons_assinatura.png
+                /> -->
+              <td rowspan="5" style='width:125px; padding-bottom: 5px;'>
+                <img width='120' src='https://sjp.ifsp.edu.br/images/Logo_Campus/assinatura/logoSJRP2.png'/>
+              </td>
+              <!--Fim Logo  -->
+              <td colspan="2">
+                <span style='font-size: 14px; font-weight: bold;'>
+                  <span id='nome'>NOME DO SERVIDOR </span><span id='cargo'>Cargo exercido</span><br />
+                  <span style='font-size: 13px; font-weight: bold;' id='setor'>Setor ou Coordenadoria</span></br>
+                  <span style='font-size: 11px; font-weight: bolder;'>+55 <span id='ramal'>XXXX</span></span><br />
+                  <span style='font-size: 11px; font-weight: bold;'>
+                    <a style='color: #259235;'
+                      href='https://sjp.ifsp.edu.br/'>https://sjp.ifsp.edu.br/</a></span><br />
+                  <span style='font-align: center;' id='infos'></span>
+
+              </td>
+              <!-- Social -->
+              <td style="width:  30px; padding: 5px 5px 0px 5px;"><img style='float: left;' height='90'
+                  src='https://sjp.ifsp.edu.br/images/Logo_Campus/assinatura/icons_assinatura.png'/>
+              </td>
+
+              <td rowspan="5" style="width:  50px;">
+                <span style='font-size: 12px; font-weight: bold;'>
+                  <a style='color: black; text-decoration: none;'
+                    href='https://www.youtube.com/c/ifspriopreto'>/ifspriopreto</a></span><br />
+                <span style='font-size: 12px; font-weight: bold;'>
+                  <a style='color: black; text-decoration: none;'
+                    href='https://www.twitter.com/ifspriopreto/'>/ifspriopreto</a></span><br />
+                <span style='font-size: 12px; font-weight: bold;'>
+                  <a style='color: black; text-decoration: none;'
+                    href='https://www.facebook.com/ifspriopreto'>/ifspriopreto</a></span><br />
+                <span style='font-size: 12px; font-weight: bold;'>
+                  <a style='color: black; text-decoration: none;'
+                    href='https://www.instagram.com/ifsp_riopreto'>/ifsp_riopreto</a></span><br />
+
+                <span style='font-size: 11px; font-weight: bold;' id='infos'>
+              </td>
+              
+            </tr>
+
+          </table>
+        </div>
+
+        
+
+      </div>
+
+      <!--  <div class="col-md-2"></div>
+    <div class="col-md-8 inserted">
+    <div id="card-237886">
+      <div class="card">
+        <div class="card-header">
+           <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-237886" href="#card-element-127655">Collapsible Group Item #1</a>
+        </div>
+        <div id="card-element-127655" class="collapse">
+          <div class="card-body">
+            Anim pariatur cliche...
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-2"></div>
+	</div>
+</div> -->
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/scripts.js"></script>
+</body>
+
+</html>

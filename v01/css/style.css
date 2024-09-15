@@ -1,0 +1,17 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  width: 85%;
+  margin: auto;
+}
+
+pre {
+   font-family: "Open Sans", sans-serif;
+   font-size: 12px;
+   text-align: center;
+   width: 600px;
+   white-space: normal;
+}
+
+.lateral{
+  padding-top: 25%;
+}
